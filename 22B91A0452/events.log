@@ -218,3 +218,53 @@
 2025-06-27T06:49:21.801Z [BACKEND] [DEBUG] [service] DB lookup starting for stats: test-google
 2025-06-27T06:49:21.805Z [BACKEND] [INFO] [service] DB lookup completed for stats: test-google
 2025-06-27T06:49:21.806Z [BACKEND] [INFO] [handler] stats retrieved for: test-google (clicks: 2)
+2025-06-27T07:14:04.756Z POST /shorturls ::ffff:127.0.0.1
+2025-06-27T07:14:04.757Z [BACKEND] [INFO] [middleware] URL validation passed
+2025-06-27T07:14:04.758Z [BACKEND] [INFO] [service] using custom shortcode: google
+2025-06-27T07:14:04.759Z [BACKEND] [DEBUG] [service] DB lookup starting for shortcode: google
+2025-06-27T07:14:04.763Z [BACKEND] [INFO] [service] DB lookup completed for: google
+2025-06-27T07:14:04.764Z [BACKEND] [DEBUG] [service] creating new URL document for: google
+2025-06-27T07:14:04.769Z [BACKEND] [INFO] [service] URL document created successfully: google
+2025-06-27T07:14:04.770Z Created google
+2025-06-27T07:14:04.771Z [BACKEND] [INFO] [handler] short URL created: google -> https://www.google.com
+2025-06-27T07:15:04.769Z POST /shorturls ::ffff:127.0.0.1
+2025-06-27T07:15:04.771Z [BACKEND] [INFO] [middleware] URL validation passed
+2025-06-27T07:15:04.773Z [BACKEND] [INFO] [service] auto-generated shortcode: QBbi
+2025-06-27T07:15:04.774Z [BACKEND] [DEBUG] [service] DB lookup starting for shortcode: QBbi
+2025-06-27T07:15:04.777Z [BACKEND] [INFO] [service] DB lookup completed for: QBbi
+2025-06-27T07:15:04.778Z [BACKEND] [DEBUG] [service] creating new URL document for: QBbi
+2025-06-27T07:15:04.786Z [BACKEND] [INFO] [service] URL document created successfully: QBbi
+2025-06-27T07:15:04.788Z Created QBbi
+2025-06-27T07:15:04.790Z [BACKEND] [INFO] [handler] short URL created: QBbi -> https://www.github.com
+2025-06-27T07:15:56.283Z GET /shorturls/google ::ffff:127.0.0.1
+2025-06-27T07:15:56.285Z [BACKEND] [DEBUG] [service] DB lookup starting for stats: google
+2025-06-27T07:15:56.289Z [BACKEND] [INFO] [service] DB lookup completed for stats: google
+2025-06-27T07:15:56.290Z [BACKEND] [INFO] [handler] stats retrieved for: google (clicks: 0)
+2025-06-27T07:17:10.995Z GET /google ::ffff:127.0.0.1
+2025-06-27T07:17:10.996Z [BACKEND] [DEBUG] [service] DB lookup starting for redirect: google
+2025-06-27T07:17:11.000Z [BACKEND] [INFO] [service] DB lookup completed for redirect: google
+2025-06-27T07:17:11.002Z [BACKEND] [DEBUG] [service] updating click stats for: google
+2025-06-27T07:17:11.007Z [BACKEND] [INFO] [service] click stats updated for: google (total clicks: 1)
+2025-06-27T07:17:11.008Z Redirect google
+2025-06-27T07:17:11.010Z [BACKEND] [INFO] [handler] successful redirect: google -> https://www.google.com
+2025-06-27T07:18:01.736Z POST /shorturls ::ffff:127.0.0.1
+2025-06-27T07:18:01.738Z [BACKEND] [WARN] [middleware] invalid url format: not-a-valid-url
+2025-06-27T07:18:01.741Z Error 400 POST /shorturls
+2025-06-27T07:20:07.816Z POST /shorturls ::ffff:127.0.0.1
+2025-06-27T07:20:07.817Z [BACKEND] [INFO] [middleware] URL validation passed
+2025-06-27T07:20:07.819Z [BACKEND] [INFO] [service] using custom shortcode: google
+2025-06-27T07:20:07.820Z [BACKEND] [DEBUG] [service] DB lookup starting for shortcode: google
+2025-06-27T07:20:07.823Z [BACKEND] [INFO] [service] DB lookup completed for: google
+2025-06-27T07:20:07.824Z [BACKEND] [WARN] [handler] shortcode already taken: google
+2025-06-27T07:20:07.826Z Error 409 POST /shorturls
+2025-06-27T07:20:52.948Z GET /google ::ffff:127.0.0.1
+2025-06-27T07:20:52.949Z [BACKEND] [DEBUG] [service] DB lookup starting for redirect: google
+2025-06-27T07:20:52.954Z [BACKEND] [INFO] [service] DB lookup completed for redirect: google
+2025-06-27T07:20:52.955Z [BACKEND] [DEBUG] [service] updating click stats for: google
+2025-06-27T07:20:52.963Z [BACKEND] [INFO] [service] click stats updated for: google (total clicks: 2)
+2025-06-27T07:20:52.965Z Redirect google
+2025-06-27T07:20:52.966Z [BACKEND] [INFO] [handler] successful redirect: google -> https://www.google.com
+2025-06-27T07:21:35.677Z GET /shorturls/google ::ffff:127.0.0.1
+2025-06-27T07:21:35.679Z [BACKEND] [DEBUG] [service] DB lookup starting for stats: google
+2025-06-27T07:21:35.683Z [BACKEND] [INFO] [service] DB lookup completed for stats: google
+2025-06-27T07:21:35.685Z [BACKEND] [INFO] [handler] stats retrieved for: google (clicks: 2)
