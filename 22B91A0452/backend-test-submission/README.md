@@ -1,53 +1,60 @@
-# URL Shortener Backend
+# URL Shortener Backend – Project Guide
 
-A sleek, feature-rich URL shortener service built with Node.js, Express, and MongoDB. Transform long URLs into short, shareable links with analytics, expiry, and more.
-
----
-
-## Features
-
-- **Custom or Auto Shortcodes:** Choose your own or let the system generate one.
-- **Time-based Expiry:** Set how long your links should work (default: 30 minutes).
-- **Click Analytics:** Track clicks, referrers, and IPs.
-- **Reliable Storage:** MongoDB for persistent, safe data.
-- **Request Logging:** All requests and events are logged for transparency.
-- **Smart Redirects:** Handles expired and invalid links gracefully.
-- **Developer Friendly:** CORS enabled, auto port selection, and easy API.
+This repository contains a Node.js backend for a URL shortener service. It allows you to create, manage, and track short links with expiry and analytics, using MongoDB for storage.
 
 ---
 
-## Project Structure
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Folder Structure](#folder-structure)
+- [Setup Process](#setup-process)
+- [Development Process](#development-process)
+- [Testing Process](#testing-process)
+- [API Usage](#api-usage)
+- [Deployment Notes](#deployment-notes)
+- [Troubleshooting](#troubleshooting)
+- [License](#license)
+
+---
+
+## Project Overview
+
+This backend provides:
+- Shortening of long URLs with custom or random shortcodes
+- Expiry for links (default: 30 minutes, configurable)
+- Click analytics (count, referrer, IP, timestamp)
+- RESTful API endpoints
+- Logging of all requests and events
+
+---
+
+## Folder Structure
 
 ```
 backend-test-submission/
-├── app.js                # Main application entry point
-├── package.json          # Dependencies and scripts
+├── app.js                # Main server file
+├── package.json          # Project metadata and scripts
 ├── controllers/
-│   └── shorturl.js       # URL shortener business logic
+│   └── shorturl.js       # Main logic for short URLs
 ├── models/
 │   └── ShortUrl.js       # Mongoose schema/model
 ├── routes/
-│   └── shorturl.js       # API routes
-├── services/             # (Reserved for future service logic)
+│   └── shorturl.js       # API endpoints
 ├── test-api.js           # Automated API test script
-logging-middleware/
-└── log.js                # Express middleware for request logging
+├── services/             # (Reserved for future logic)
+├── logging-middleware/
+│   └── log.js            # Request logging middleware
+├── .gitignore            # node_modules and .env are not tracked
+└── README.md             # This file
 ```
 
 ---
 
-## Getting Started
+## Setup Process
 
-### Prerequisites
-
-- **Node.js** (v14+ recommended)
-- **npm** (comes with Node.js)
-- **MongoDB** (local or cloud, e.g., MongoDB Atlas)
-
-### Setup
-
-1. **Clone the repository and navigate to the project:**
+1. **Clone the repository:**
    ```bash
+   git clone <your-repo-url>
    cd backend-test-submission
    ```
 
@@ -57,163 +64,101 @@ logging-middleware/
    ```
 
 3. **Configure environment variables:**
-   Create a `.env` file in the `backend-test-submission` directory:
-   ```
-   MONGO_URI=mongodb://localhost:27017/urlshortener
-   PORT=3000
-   ```
-   > If using MongoDB Atlas, replace `MONGO_URI` with your connection string.
+   - Create a `.env` file in the project root:
+     ```
+     MONGO_URI=mongodb://localhost:27017/urlshortener
+     PORT=3000
+     ```
+   - If using MongoDB Atlas, use your connection string for `MONGO_URI`.
 
-4. **Start the server:**
+4. **Start MongoDB:**
+   - Make sure your MongoDB server is running locally or your cloud instance is accessible.
+
+5. **Start the server:**
    ```bash
    npm start
    ```
-   The server will run on `http://localhost:3000` (or the next available port if 3000 is in use).
+   - The server will run on `http://localhost:3000` (or the next available port).
+
+---
+
+## Development Process
+
+- **Main logic is in `controllers/shorturl.js`**
+- **API routes are defined in `routes/shorturl.js`**
+- **Mongoose schema is in `models/ShortUrl.js`**
+- **Logging is handled by `logging-middleware/log.js`**
+- **All requests and important events are logged to `../events.log`**
+- **Sensitive files like `node_modules` and `.env` are excluded from git (see `.gitignore`)**
+
+If you want to add features, create new controllers/services and wire them up in `app.js` and the routes folder.
+
+---
+
+## Testing Process
+
+1. **Automated API Testing:**
+   - The `test-api.js` script covers all main features: creation, auto-shortcode, stats, redirect, invalid input, duplicates, non-existent codes, and click tracking.
+   - To run tests:
+     ```bash
+     npm test
+     ```
+   - Make sure the server is running before running tests.
+
+2. **Manual Testing (with Postman/Insomnia):**
+   - **Create a short URL:**
+     - POST `http://localhost:3000/shorturls`
+     - Body (JSON):
+       ```json
+       {
+         "original": "https://www.google.com",
+         "shortcode": "google",
+         "expiry": "2025-12-31T23:59:59.000Z"
+       }
+       ```
+   - **Get stats:**
+     - GET `http://localhost:3000/shorturls/google`
+   - **Redirect:**
+     - GET `http://localhost:3000/google`
 
 ---
 
 ## API Usage
 
-### 1. Create a Short URL
-
-**POST** `/shorturls`
-
-**Request:**
-```json
-{
-  "original": "https://example.com",
-  "expiry": "2025-07-01T12:00:00.000Z",  // Optional
-  "shortcode": "custom123"               // Optional
-}
-```
-
-**Response:**
-```json
-{
-  "shortcode": "custom123",
-  "original": "https://example.com",
-  "expiry": "2025-07-01T12:00:00.000Z",
-  "created": "2025-06-27T10:00:00.000Z"
-}
-```
-
----
-
-### 2. Get Short URL Stats
-
-**GET** `/shorturls/:shortcode`
-
-**Response:**
-```json
-{
-  "shortcode": "custom123",
-  "original": "https://example.com",
-  "created": "...",
-  "expiry": "...",
-  "clicks": 5,
-  "clickLogs": [
-    {
-      "time": "...",
-      "referrer": "...",
-      "ip": "..."
-    }
-  ]
-}
-```
-
----
-
-### 3. Redirect to Original URL
-
-**GET** `/:shortcode`
-
-Redirects to the original URL if valid and not expired.
-
-- `404`: Shortcode not found
-- `410`: URL expired
-
----
-
-## Example Usage
-
-**Create a short URL (curl):**
-```bash
-curl -X POST http://localhost:3000/shorturls \
-  -H "Content-Type: application/json" \
-  -d '{"original": "https://google.com", "shortcode": "google"}'
-```
-
-**Get stats:**
-```bash
-curl http://localhost:3000/shorturls/google
-```
-
-**Redirect:**
-```bash
-curl -L http://localhost:3000/google
-```
-
----
-
-## Automated Testing
-
-A comprehensive test script is included to verify all API features.
-
-### How to Run Tests
-
-1. **Start your server:**
-   ```bash
-   npm start
-   ```
-   Wait for the message:  
-   `Server is running on port 3000`
-
-2. **In a new terminal, run:**
-   ```bash
-   npm test
-   ```
-
-### Troubleshooting
-
-- If you see:
+### Create a Short URL
+- **POST** `/shorturls`
+- **Body Example:**
+  ```json
+  {
+    "original": "https://example.com",
+    "expiry": "2025-12-31T23:59:59.000Z", // optional
+    "shortcode": "custom123"              // optional
+  }
   ```
-  Server Health Check Failed:
-  Server is not running on localhost:3000. Please start your server first.
-  ```
-  - Make sure your server is running and listening on port 3000.
-  - Wait for the "Server is running" message before running tests.
-  - If your server started on a different port, update the `BASE_URL` and port in `test-api.js` accordingly.
+
+### Get Short URL Stats
+- **GET** `/shorturls/:shortcode`
+
+### Redirect to Original URL
+- **GET** `/:shortcode`
 
 ---
 
-## Data Model
-
-```js
-{
-  shortcode: String,
-  original: String,
-  created: Date,
-  expiry: Date,
-  clicks: Number,
-  clickLogs: [
-    {
-      time: Date,
-      referrer: String,
-      ip: String
-    }
-  ]
-}
-```
+## Deployment Notes
+- For production, set your environment variables securely.
+- Use a process manager like PM2 or Docker for reliability.
+- Make sure your MongoDB instance is secured and backed up.
+- Monitor logs for errors and usage patterns.
 
 ---
 
-## Logging
-
-- All requests and important events are logged to `../events.log`.
-- Useful for debugging and analytics.
+## Troubleshooting
+- If you see `Server Health Check Failed`, make sure your server is running and accessible.
+- If port 3000 is busy, the server will try the next available port and print it in the console.
+- If you get MongoDB connection errors, check your `MONGO_URI` and MongoDB server status.
+- For any issues, check `../events.log` for detailed logs.
 
 ---
 
 ## License
-
 MIT
