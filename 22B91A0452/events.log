@@ -1,0 +1,220 @@
+2025-06-27T06:02:36.838Z GET /shorturls/test ::1
+2025-06-27T06:02:36.856Z Error 404 GET /shorturls/test
+2025-06-27T06:03:06.552Z GET /shorturls/test ::1
+2025-06-27T06:03:06.556Z Error 404 GET /shorturls/test
+2025-06-27T06:06:58.950Z GET / ::1
+2025-06-27T06:06:58.955Z Error 404 GET /
+2025-06-27T06:06:59.998Z POST /shorturls ::1
+2025-06-27T06:07:00.027Z Error 409 POST /shorturls
+2025-06-27T06:07:00.032Z POST /shorturls ::1
+2025-06-27T06:07:00.050Z Created WVzv
+2025-06-27T06:07:00.053Z GET /shorturls/test-google ::1
+2025-06-27T06:07:00.064Z GET /test-google ::1
+2025-06-27T06:07:00.083Z Redirect test-google
+2025-06-27T06:07:00.088Z POST /shorturls ::1
+2025-06-27T06:07:00.089Z Error 400 POST /shorturls
+2025-06-27T06:07:00.096Z POST /shorturls ::1
+2025-06-27T06:07:00.101Z Error 409 POST /shorturls
+2025-06-27T06:07:00.103Z GET /shorturls/nonexistent ::1
+2025-06-27T06:07:00.110Z Error 404 GET /shorturls/nonexistent
+2025-06-27T06:07:00.114Z GET /shorturls/test-google ::1
+2025-06-27T06:07:00.120Z GET /test-google ::1
+2025-06-27T06:07:00.134Z Redirect test-google
+2025-06-27T06:07:00.137Z GET /shorturls/test-google ::1
+2025-06-27T06:10:32.314Z POST /shorturls ::1
+2025-06-27T06:10:32.316Z [BACKEND] [INFO] [middleware] URL validation passed
+2025-06-27T06:10:32.317Z [BACKEND] [INFO] [service] using custom shortcode: demo123
+2025-06-27T06:10:32.318Z [BACKEND] [DEBUG] [service] DB lookup starting for shortcode: demo123
+2025-06-27T06:10:32.329Z [BACKEND] [INFO] [service] DB lookup completed for: demo123
+2025-06-27T06:10:32.329Z [BACKEND] [DEBUG] [service] creating new URL document for: demo123
+2025-06-27T06:10:32.348Z [BACKEND] [INFO] [service] URL document created successfully: demo123
+2025-06-27T06:10:32.349Z Created demo123
+2025-06-27T06:10:32.350Z [BACKEND] [INFO] [handler] short URL created: demo123 -> https://example.com
+2025-06-27T06:10:48.189Z GET /demo123 ::1
+2025-06-27T06:10:48.195Z [BACKEND] [DEBUG] [service] DB lookup starting for redirect: demo123
+2025-06-27T06:10:48.201Z [BACKEND] [INFO] [service] DB lookup completed for redirect: demo123
+2025-06-27T06:10:48.202Z [BACKEND] [DEBUG] [service] updating click stats for: demo123
+2025-06-27T06:10:48.218Z [BACKEND] [INFO] [service] click stats updated for: demo123 (total clicks: 1)
+2025-06-27T06:10:48.218Z Redirect demo123
+2025-06-27T06:10:48.219Z [BACKEND] [INFO] [handler] successful redirect: demo123 -> https://example.com
+2025-06-27T06:10:58.659Z POST /shorturls ::1
+2025-06-27T06:10:58.660Z [BACKEND] [WARN] [middleware] invalid url format: not-a-valid-url
+2025-06-27T06:10:58.661Z Error 400 POST /shorturls
+2025-06-27T06:11:06.607Z POST /shorturls ::1
+2025-06-27T06:11:06.609Z [BACKEND] [INFO] [middleware] URL validation passed
+2025-06-27T06:11:06.609Z [BACKEND] [INFO] [service] using custom shortcode: demo123
+2025-06-27T06:11:06.610Z [BACKEND] [DEBUG] [service] DB lookup starting for shortcode: demo123
+2025-06-27T06:11:06.614Z [BACKEND] [INFO] [service] DB lookup completed for: demo123
+2025-06-27T06:11:06.614Z [BACKEND] [WARN] [handler] shortcode already taken: demo123
+2025-06-27T06:11:06.615Z Error 409 POST /shorturls
+2025-06-27T06:14:32.966Z POST /shorturls ::1
+2025-06-27T06:14:32.978Z [BACKEND] [INFO] [middleware] URL validation passed
+2025-06-27T06:14:32.979Z [BACKEND] [INFO] [service] using custom shortcode: youtube-test
+2025-06-27T06:14:32.979Z [BACKEND] [DEBUG] [service] DB lookup starting for shortcode: youtube-test
+2025-06-27T06:14:33.021Z [BACKEND] [INFO] [service] DB lookup completed for: youtube-test
+2025-06-27T06:14:33.021Z [BACKEND] [DEBUG] [service] creating new URL document for: youtube-test
+2025-06-27T06:14:33.042Z [BACKEND] [INFO] [service] URL document created successfully: youtube-test
+2025-06-27T06:14:33.042Z Created youtube-test
+2025-06-27T06:14:33.043Z [BACKEND] [INFO] [handler] short URL created: youtube-test -> https://www.youtube.com
+2025-06-27T06:14:49.700Z POST /shorturls ::1
+2025-06-27T06:14:49.703Z [BACKEND] [INFO] [middleware] URL validation passed
+2025-06-27T06:14:49.704Z [BACKEND] [INFO] [service] using custom shortcode: postman-site
+2025-06-27T06:14:49.705Z [BACKEND] [DEBUG] [service] DB lookup starting for shortcode: postman-site
+2025-06-27T06:14:49.708Z [BACKEND] [INFO] [service] DB lookup completed for: postman-site
+2025-06-27T06:14:49.709Z [BACKEND] [DEBUG] [service] creating new URL document for: postman-site
+2025-06-27T06:14:49.712Z [BACKEND] [INFO] [service] URL document created successfully: postman-site
+2025-06-27T06:14:49.713Z Created postman-site
+2025-06-27T06:14:49.713Z [BACKEND] [INFO] [handler] short URL created: postman-site -> https://www.postman.com
+2025-06-27T06:14:59.097Z GET /shorturls/postman-site ::1
+2025-06-27T06:14:59.105Z [BACKEND] [DEBUG] [service] DB lookup starting for stats: postman-site
+2025-06-27T06:14:59.109Z [BACKEND] [INFO] [service] DB lookup completed for stats: postman-site
+2025-06-27T06:14:59.109Z [BACKEND] [INFO] [handler] stats retrieved for: postman-site (clicks: 0)
+2025-06-27T06:15:23.603Z POST /shorturls ::1
+2025-06-27T06:15:23.603Z [BACKEND] [INFO] [middleware] URL validation passed
+2025-06-27T06:15:23.605Z [BACKEND] [INFO] [service] using custom shortcode: tweet-node
+2025-06-27T06:15:23.607Z [BACKEND] [DEBUG] [service] DB lookup starting for shortcode: tweet-node
+2025-06-27T06:15:23.620Z [BACKEND] [INFO] [service] DB lookup completed for: tweet-node
+2025-06-27T06:15:23.621Z [BACKEND] [DEBUG] [service] creating new URL document for: tweet-node
+2025-06-27T06:15:23.629Z [BACKEND] [INFO] [service] URL document created successfully: tweet-node
+2025-06-27T06:15:23.630Z Created tweet-node
+2025-06-27T06:15:23.630Z [BACKEND] [INFO] [handler] short URL created: tweet-node -> https://twitter.com/nodejs/status/123456789
+2025-06-27T06:17:09.626Z POST /shorturls ::1
+2025-06-27T06:17:09.630Z [BACKEND] [INFO] [middleware] URL validation passed
+2025-06-27T06:17:09.632Z [BACKEND] [INFO] [service] using custom shortcode: tweet-node
+2025-06-27T06:17:09.633Z [BACKEND] [DEBUG] [service] DB lookup starting for shortcode: tweet-node
+2025-06-27T06:17:09.672Z [BACKEND] [INFO] [service] DB lookup completed for: tweet-node
+2025-06-27T06:17:09.673Z [BACKEND] [WARN] [handler] shortcode already taken: tweet-node
+2025-06-27T06:17:09.687Z Error 409 POST /shorturls
+2025-06-27T06:17:15.093Z POST /shorturls ::1
+2025-06-27T06:17:15.094Z [BACKEND] [INFO] [middleware] URL validation passed
+2025-06-27T06:17:15.095Z [BACKEND] [INFO] [service] using custom shortcode: google-3000
+2025-06-27T06:17:15.095Z [BACKEND] [DEBUG] [service] DB lookup starting for shortcode: google-3000
+2025-06-27T06:17:15.101Z [BACKEND] [INFO] [service] DB lookup completed for: google-3000
+2025-06-27T06:17:15.102Z [BACKEND] [DEBUG] [service] creating new URL document for: google-3000
+2025-06-27T06:17:15.124Z [BACKEND] [INFO] [service] URL document created successfully: google-3000
+2025-06-27T06:17:15.125Z Created google-3000
+2025-06-27T06:17:15.126Z [BACKEND] [INFO] [handler] short URL created: google-3000 -> https://www.google.com
+2025-06-27T06:17:23.363Z GET /shorturls/google-3000 ::1
+2025-06-27T06:17:23.365Z [BACKEND] [DEBUG] [service] DB lookup starting for stats: google-3000
+2025-06-27T06:17:23.375Z [BACKEND] [INFO] [service] DB lookup completed for stats: google-3000
+2025-06-27T06:17:23.376Z [BACKEND] [INFO] [handler] stats retrieved for: google-3000 (clicks: 0)
+2025-06-27T06:20:12.042Z GET / ::1
+2025-06-27T06:20:12.051Z Error 404 GET /
+2025-06-27T06:20:13.074Z POST /shorturls ::1
+2025-06-27T06:20:13.075Z [BACKEND] [INFO] [middleware] URL validation passed
+2025-06-27T06:20:13.075Z [BACKEND] [INFO] [service] using custom shortcode: test-google
+2025-06-27T06:20:13.078Z [BACKEND] [DEBUG] [service] DB lookup starting for shortcode: test-google
+2025-06-27T06:20:13.084Z [BACKEND] [INFO] [service] DB lookup completed for: test-google
+2025-06-27T06:20:13.084Z [BACKEND] [WARN] [handler] shortcode already taken: test-google
+2025-06-27T06:20:13.086Z Error 409 POST /shorturls
+2025-06-27T06:20:13.091Z POST /shorturls ::1
+2025-06-27T06:20:13.092Z [BACKEND] [INFO] [middleware] URL validation passed
+2025-06-27T06:20:13.096Z [BACKEND] [INFO] [service] auto-generated shortcode: K15R
+2025-06-27T06:20:13.097Z [BACKEND] [DEBUG] [service] DB lookup starting for shortcode: K15R
+2025-06-27T06:20:13.100Z [BACKEND] [INFO] [service] DB lookup completed for: K15R
+2025-06-27T06:20:13.100Z [BACKEND] [DEBUG] [service] creating new URL document for: K15R
+2025-06-27T06:20:13.105Z [BACKEND] [INFO] [service] URL document created successfully: K15R
+2025-06-27T06:20:13.106Z Created K15R
+2025-06-27T06:20:13.106Z [BACKEND] [INFO] [handler] short URL created: K15R -> https://www.github.com
+2025-06-27T06:20:13.114Z GET /shorturls/test-google ::1
+2025-06-27T06:20:13.115Z [BACKEND] [DEBUG] [service] DB lookup starting for stats: test-google
+2025-06-27T06:20:13.119Z [BACKEND] [INFO] [service] DB lookup completed for stats: test-google
+2025-06-27T06:20:13.120Z [BACKEND] [INFO] [handler] stats retrieved for: test-google (clicks: 4)
+2025-06-27T06:20:13.124Z GET /test-google ::1
+2025-06-27T06:20:13.125Z [BACKEND] [DEBUG] [service] DB lookup starting for redirect: test-google
+2025-06-27T06:20:13.132Z [BACKEND] [INFO] [service] DB lookup completed for redirect: test-google
+2025-06-27T06:20:13.133Z [BACKEND] [DEBUG] [service] updating click stats for: test-google
+2025-06-27T06:20:13.152Z [BACKEND] [INFO] [service] click stats updated for: test-google (total clicks: 5)
+2025-06-27T06:20:13.153Z Redirect test-google
+2025-06-27T06:20:13.153Z [BACKEND] [INFO] [handler] successful redirect: test-google -> https://www.google.com
+2025-06-27T06:20:13.162Z POST /shorturls ::1
+2025-06-27T06:20:13.165Z [BACKEND] [WARN] [middleware] invalid url format: not-a-valid-url
+2025-06-27T06:20:13.166Z Error 400 POST /shorturls
+2025-06-27T06:20:13.169Z POST /shorturls ::1
+2025-06-27T06:20:13.170Z [BACKEND] [INFO] [middleware] URL validation passed
+2025-06-27T06:20:13.170Z [BACKEND] [INFO] [service] using custom shortcode: test-google
+2025-06-27T06:20:13.171Z [BACKEND] [DEBUG] [service] DB lookup starting for shortcode: test-google
+2025-06-27T06:20:13.175Z [BACKEND] [INFO] [service] DB lookup completed for: test-google
+2025-06-27T06:20:13.175Z [BACKEND] [WARN] [handler] shortcode already taken: test-google
+2025-06-27T06:20:13.181Z Error 409 POST /shorturls
+2025-06-27T06:20:13.184Z GET /shorturls/nonexistent ::1
+2025-06-27T06:20:13.185Z [BACKEND] [DEBUG] [service] DB lookup starting for stats: nonexistent
+2025-06-27T06:20:13.188Z [BACKEND] [INFO] [service] DB lookup completed for stats: nonexistent
+2025-06-27T06:20:13.189Z [BACKEND] [WARN] [handler] stats requested for non-existent shortcode: nonexistent
+2025-06-27T06:20:13.191Z Error 404 GET /shorturls/nonexistent
+2025-06-27T06:20:13.197Z GET /shorturls/test-google ::1
+2025-06-27T06:20:13.198Z [BACKEND] [DEBUG] [service] DB lookup starting for stats: test-google
+2025-06-27T06:20:13.202Z [BACKEND] [INFO] [service] DB lookup completed for stats: test-google
+2025-06-27T06:20:13.202Z [BACKEND] [INFO] [handler] stats retrieved for: test-google (clicks: 5)
+2025-06-27T06:20:13.205Z GET /test-google ::1
+2025-06-27T06:20:13.206Z [BACKEND] [DEBUG] [service] DB lookup starting for redirect: test-google
+2025-06-27T06:20:13.210Z [BACKEND] [INFO] [service] DB lookup completed for redirect: test-google
+2025-06-27T06:20:13.213Z [BACKEND] [DEBUG] [service] updating click stats for: test-google
+2025-06-27T06:20:13.220Z [BACKEND] [INFO] [service] click stats updated for: test-google (total clicks: 6)
+2025-06-27T06:20:13.221Z Redirect test-google
+2025-06-27T06:20:13.221Z [BACKEND] [INFO] [handler] successful redirect: test-google -> https://www.google.com
+2025-06-27T06:20:13.223Z GET /shorturls/test-google ::1
+2025-06-27T06:20:13.224Z [BACKEND] [DEBUG] [service] DB lookup starting for stats: test-google
+2025-06-27T06:20:13.231Z [BACKEND] [INFO] [service] DB lookup completed for stats: test-google
+2025-06-27T06:20:13.232Z [BACKEND] [INFO] [handler] stats retrieved for: test-google (clicks: 6)
+2025-06-27T06:49:20.513Z GET / ::1
+2025-06-27T06:49:20.521Z Error 404 GET /
+2025-06-27T06:49:21.571Z POST /shorturls ::1
+2025-06-27T06:49:21.573Z [BACKEND] [INFO] [middleware] URL validation passed
+2025-06-27T06:49:21.574Z [BACKEND] [INFO] [service] using custom shortcode: test-google
+2025-06-27T06:49:21.576Z [BACKEND] [DEBUG] [service] DB lookup starting for shortcode: test-google
+2025-06-27T06:49:21.603Z [BACKEND] [INFO] [service] DB lookup completed for: test-google
+2025-06-27T06:49:21.604Z [BACKEND] [DEBUG] [service] creating new URL document for: test-google
+2025-06-27T06:49:21.636Z [BACKEND] [INFO] [service] URL document created successfully: test-google
+2025-06-27T06:49:21.638Z Created test-google
+2025-06-27T06:49:21.639Z [BACKEND] [INFO] [handler] short URL created: test-google -> https://www.google.com
+2025-06-27T06:49:21.662Z POST /shorturls ::1
+2025-06-27T06:49:21.663Z [BACKEND] [INFO] [middleware] URL validation passed
+2025-06-27T06:49:21.664Z [BACKEND] [INFO] [service] auto-generated shortcode: _0Q3
+2025-06-27T06:49:21.665Z [BACKEND] [DEBUG] [service] DB lookup starting for shortcode: _0Q3
+2025-06-27T06:49:21.669Z [BACKEND] [INFO] [service] DB lookup completed for: _0Q3
+2025-06-27T06:49:21.670Z [BACKEND] [DEBUG] [service] creating new URL document for: _0Q3
+2025-06-27T06:49:21.676Z [BACKEND] [INFO] [service] URL document created successfully: _0Q3
+2025-06-27T06:49:21.678Z Created _0Q3
+2025-06-27T06:49:21.679Z [BACKEND] [INFO] [handler] short URL created: _0Q3 -> https://www.github.com
+2025-06-27T06:49:21.684Z GET /shorturls/test-google ::1
+2025-06-27T06:49:21.687Z [BACKEND] [DEBUG] [service] DB lookup starting for stats: test-google
+2025-06-27T06:49:21.697Z [BACKEND] [INFO] [service] DB lookup completed for stats: test-google
+2025-06-27T06:49:21.698Z [BACKEND] [INFO] [handler] stats retrieved for: test-google (clicks: 0)
+2025-06-27T06:49:21.702Z GET /test-google ::1
+2025-06-27T06:49:21.703Z [BACKEND] [DEBUG] [service] DB lookup starting for redirect: test-google
+2025-06-27T06:49:21.710Z [BACKEND] [INFO] [service] DB lookup completed for redirect: test-google
+2025-06-27T06:49:21.712Z [BACKEND] [DEBUG] [service] updating click stats for: test-google
+2025-06-27T06:49:21.733Z [BACKEND] [INFO] [service] click stats updated for: test-google (total clicks: 1)
+2025-06-27T06:49:21.734Z Redirect test-google
+2025-06-27T06:49:21.735Z [BACKEND] [INFO] [handler] successful redirect: test-google -> https://www.google.com
+2025-06-27T06:49:21.741Z POST /shorturls ::1
+2025-06-27T06:49:21.742Z [BACKEND] [WARN] [middleware] invalid url format: not-a-valid-url
+2025-06-27T06:49:21.745Z Error 400 POST /shorturls
+2025-06-27T06:49:21.747Z POST /shorturls ::1
+2025-06-27T06:49:21.748Z [BACKEND] [INFO] [middleware] URL validation passed
+2025-06-27T06:49:21.749Z [BACKEND] [INFO] [service] using custom shortcode: test-google
+2025-06-27T06:49:21.750Z [BACKEND] [DEBUG] [service] DB lookup starting for shortcode: test-google
+2025-06-27T06:49:21.755Z [BACKEND] [INFO] [service] DB lookup completed for: test-google
+2025-06-27T06:49:21.756Z [BACKEND] [WARN] [handler] shortcode already taken: test-google
+2025-06-27T06:49:21.757Z Error 409 POST /shorturls
+2025-06-27T06:49:21.759Z GET /shorturls/nonexistent ::1
+2025-06-27T06:49:21.761Z [BACKEND] [DEBUG] [service] DB lookup starting for stats: nonexistent
+2025-06-27T06:49:21.764Z [BACKEND] [INFO] [service] DB lookup completed for stats: nonexistent
+2025-06-27T06:49:21.765Z [BACKEND] [WARN] [handler] stats requested for non-existent shortcode: nonexistent
+2025-06-27T06:49:21.767Z Error 404 GET /shorturls/nonexistent
+2025-06-27T06:49:21.770Z GET /shorturls/test-google ::1
+2025-06-27T06:49:21.771Z [BACKEND] [DEBUG] [service] DB lookup starting for stats: test-google
+2025-06-27T06:49:21.776Z [BACKEND] [INFO] [service] DB lookup completed for stats: test-google
+2025-06-27T06:49:21.778Z [BACKEND] [INFO] [handler] stats retrieved for: test-google (clicks: 1)
+2025-06-27T06:49:21.783Z GET /test-google ::1
+2025-06-27T06:49:21.784Z [BACKEND] [DEBUG] [service] DB lookup starting for redirect: test-google
+2025-06-27T06:49:21.787Z [BACKEND] [INFO] [service] DB lookup completed for redirect: test-google
+2025-06-27T06:49:21.788Z [BACKEND] [DEBUG] [service] updating click stats for: test-google
+2025-06-27T06:49:21.796Z [BACKEND] [INFO] [service] click stats updated for: test-google (total clicks: 2)
+2025-06-27T06:49:21.797Z Redirect test-google
+2025-06-27T06:49:21.798Z [BACKEND] [INFO] [handler] successful redirect: test-google -> https://www.google.com
+2025-06-27T06:49:21.800Z GET /shorturls/test-google ::1
+2025-06-27T06:49:21.801Z [BACKEND] [DEBUG] [service] DB lookup starting for stats: test-google
+2025-06-27T06:49:21.805Z [BACKEND] [INFO] [service] DB lookup completed for stats: test-google
+2025-06-27T06:49:21.806Z [BACKEND] [INFO] [handler] stats retrieved for: test-google (clicks: 2)
